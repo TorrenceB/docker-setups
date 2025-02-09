@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+ client:
+  image: postgres:latest
+  restart: always
+  environment:
+   PGDATABASE: defaultdb
+   PGUSER: doadmin
+   PGPASSWORD: AVNS_S-4tCmDbUytbczumDey
+   PGHOST: db-postgresql-nyc3-44647-do-user-14490116-0.h.db.ondigitalocean.com
+   PGPORT: 25060
+   PGSSLMODE: require
+  command: ["sleep", "infinity"]
+ adminer:
+  image: adminer
+  restart: always
+  ports:
+   - 8080:8080
